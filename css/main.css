@@ -25,8 +25,53 @@ a.btn{
 	color: #fff;
 	background: #333;
 	padding: 1rem 2rem;
+	line-height: 3rem;
 	border-radius: 6px;
 	top: 50%;
 	margin-top: -1.5rem;
+}
+
+.modal-panel{
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	padding: 2rem 1rem;
+	background: rgba(0,0,0,0.6);
+	z-index: 10;
+	overflow: scroll;
+}
+
+.modal-panel:not(:target){
+	display: none;
+}
+.modal-panel:target{
+	display: block;
+}
+
+@keyframes in{
+	0%{
+		transform:scale(0);
+	}
+	80%{
+		transform:scale(1.2);
+	}
+	100%{
+		transform:scale(1);
+	}
+}
+
+.modal-content{
+	position: relative;
+	top: 0;
+	padding: 1rem;
+	width: 60%;
+	left: 20%;
+	margin: 1rem 0;
+	background: #fff;
+	z-index: 15;
+	height: auto;
+	animation: in .4s;
 }
 
